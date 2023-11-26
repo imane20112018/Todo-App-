@@ -9,10 +9,11 @@
 </head>
 
 <body>
+    <?php require_once 'includes/database.php'; ?>
     <?php include_once 'includes/nav.php'; ?>
     <div class="container">
         <section>
-            
+
         </section>
     </div>
 </body>
