@@ -1,5 +1,5 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light bg-primary mb-3">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1 text-center w-100 text-white">Todo App</span>
+        <span class="navbar-brand mb-0 h1 text-center w-100 text-white">Todo App &#9729;</span>
     </div>
 </nav>
