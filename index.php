@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 
@@ -35,15 +36,15 @@
                 }
             }
             ?>
-            <div class="border border-success p-2 my-5 mx-auto w-75">
+            <div class="border border-info p-2 my-5 mx-auto w-75">
                 <form method="post">
-                    <h4>Ajouter une nouvelle tache:</h4>
+                    <h4><b>Ajouter une nouvelle tache:</b> </h4>
                     <div class="col-auto">
                         <label for="title">Titre <span class="required">*</span> </label>
-                        <input type="text" class="form-control" id="title" value="" name="title" placeholder="Le titre de la tache.">
+                        <input type="text" class=" success form-control " id="title" value="" name="title" placeholder="Le titre de la tache.">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" name="ajouter" class="btn btn-primary rounded-3 my-2">Ajouter</button>
+                        <button type="submit" name="ajouter" class="btn btn-info rounded-3 my-2">Ajouter</button>
                     </div>
                 </form>
             </div>
@@ -53,7 +54,7 @@
         $sqlstate2 = $pdo->query('SELECT * FROM items');
         $items = $sqlstate2->fetchAll(PDO::FETCH_OBJ);
         ?>
-        <table class="table">
+        <table class="table p-2 my-5 mx-auto w-75">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -64,14 +65,14 @@
             <tbody>
                 <?php foreach ($items as $key => $item) { ?>
                     <tr>
-                        <td span class="badge rounded-pill bg-primary text-white"><?= $item->id; ?></span>
+                        <td span class="badge rounded-pill bg-info text-white"><?= $item->id; ?></span>
                         </td>
                         <td><?= $item->title; ?></td>
                         <td>
                             <form method="post">
-                                <input type="text" name="" id="" value="<?php echo $item->id ?>">
-                                <input type="submit" class="btn btn-primary" value="&#9999;" name="modifier">
-                                <input type="submit" class="btn btn-danger" value="&#10006;" name="supprimer">
+                                <input type="hidden" name="id" id="" value="<?php echo $item->id ?>">
+                                <input type="submit" formaction="modifier.php" class="btn btn-success" value="&#9999;" name="modifier">
+                                <input type="submit" formaction="supprimer.php" class="btn btn-warning" value="&#10006;" name="supprimer">
                             </form>
                         </td>
                     </tr>
